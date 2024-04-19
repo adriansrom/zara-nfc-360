@@ -1,0 +1,16 @@
+.headerTabsContainer {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 80;
+  height: 3rem;
+  border-bottom: 2px solid lightgrey;
+  ul {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+  }
+}
