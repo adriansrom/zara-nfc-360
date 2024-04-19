@@ -5,8 +5,10 @@
   z-index: 80;
   height: 2.6rem;
   border-bottom: 2px solid lightgrey;
+  align-content: center;
+  overflow-y: auto;
   ul {
-    padding: 0.5rem;
+    padding: 0px;
     margin: 0px;
     display: flex;
     list-style-type: none;

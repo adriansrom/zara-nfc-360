@@ -1,0 +1,25 @@
+.modalMultiOptionContainer {
+  height: 100%;
+  padding: 1rem;
+  .modalMultiOptionTitle {
+    text-align: end;
+    > button {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: transparent;
+      border: 0.5px solid black;
+    }
+  }
+  .modalMultiOptionBody {
+    height: 100%;
+    align-content: center;
+  }
+  .actionButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+}

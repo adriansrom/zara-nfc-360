@@ -1,0 +1,9 @@
+.sizeSelectorContainer {
+  padding: 1rem 0rem;
+  .sizeSelectors {
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+}
