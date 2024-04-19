@@ -1,4 +1,5 @@
 import React from 'react'
+import CheckStock from '../components/checkStock/CheckStock'
 import HeaderTabs from '../components/headerTabs/HeaderTabs'
 
 export default function Description() {
@@ -20,7 +21,7 @@ export default function Description() {
       }
       {
         activeTab === 'CONSULTAR STOCK' && (
-          <div>CONSULTAR STOCK</div>
+          <CheckStock />
         )
       }
     </div>

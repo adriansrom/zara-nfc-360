@@ -6,7 +6,7 @@ export default function FooterTabs() {
     <div className='footerTabsContainer'>
       <ul>
         <li>
-          <button>INICIO</button>
+          <button className='selected'>INICIO</button>
         </li>
         <li>
           <button>MENU</button>

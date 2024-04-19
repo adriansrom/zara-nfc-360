@@ -12,5 +12,11 @@
     display: flex;
     list-style-type: none;
     justify-content: space-between;
+    button {
+      color: white;
+      &.selected {
+        border-bottom: 1px solid white;
+      }
+    }
   }
 }

@@ -1,0 +1,20 @@
+.primaryButton {
+  background-color: transparent;
+  &.dark {
+    border: 0.5px solid white;
+    color: white;
+  }
+  &.light {
+    border: 0.5px solid black;
+    color: black;
+  }
+  &.small {
+    width: 8rem;
+    height: 2rem;
+  }
+
+  &.large {
+    width: 20rem;
+    height: 2.5rem;
+  }
+}
