@@ -3,7 +3,8 @@
   .sizeSelectors {
     padding: 1rem 0rem;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 1rem;
   }
 }

@@ -4,11 +4,9 @@ export default async function getPhysicalStock({ storeId, reference, sectionName
     {
       method: 'GET',
       headers: new Headers({
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
       }),
     })
-    debugger
     return res.json();
   } catch (error) {
     console.error(error);

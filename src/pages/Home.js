@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <h1>ZARA</h1>
       <div>
-        <button onClick={() => setShowModal(true)}>
+        <button className='dark' onClick={() => setShowModal(true)}>
           NFC
         </button>
         {

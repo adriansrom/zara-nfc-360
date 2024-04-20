@@ -7,7 +7,6 @@
   height: 2.5rem;
   border: 0.5px solid white;
   &.size{
-    background-color: transparent;
     color: white;
   }
 }

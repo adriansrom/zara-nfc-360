@@ -6,9 +6,9 @@ export default function CustomSelector({ type, content, action }) {
     <div className='customSelector'>
       {
         type === 'SIZE' ? (
-          <button className='size' onClick={() => action(content.code)}>{content.value}</button>
+          <button className='size' onClick={() => action(content)}>{content.value}</button>
         ) : (
-          <button onClick={() => action(content.code)} style={{backgroundColor: content.value}} ></button>
+          <button onClick={() => action(content)} style={{backgroundColor: content.value}} ></button>
         )
       }
     </ div>

@@ -1,9 +1,10 @@
-.sizeSelectorContainer {
+.colorSelectorContainer {
   padding: 1rem 0rem;
-  .sizeSelectors {
+  .colorSelectors {
     padding: 1rem 0rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 1rem;
   }
 }

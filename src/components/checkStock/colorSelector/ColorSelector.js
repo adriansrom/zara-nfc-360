@@ -5,9 +5,9 @@ import './ColorSelector.css'
 export default function ColorSelector({availableColors, onChangeSelection}) {
 
   return (
-    <div className='sizeSelectorContainer'>
+    <div className='colorSelectorContainer'>
       <h1>COLOR</h1>
-      <div className='sizeSelectors'>
+      <div className='colorSelectors'>
         {availableColors.map(color => (
           <CustomSelector key={color.code} type='COLOR' content={color} action={onChangeSelection} />
         ))}
