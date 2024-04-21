@@ -6,9 +6,8 @@ export default function Home() {
   const [showModal, setShowModal] = React.useState(false);
 
   return (
-    <div>
-      <h1>ZARA</h1>
-      <div>
+    <div className='homeContainer'>
+      <>
         <button className='dark' onClick={() => setShowModal(true)}>
           NFC
         </button>
@@ -19,7 +18,7 @@ export default function Home() {
             </Modal>
           )
         }
-      </div>
+      </>
     </div>
   )
 }

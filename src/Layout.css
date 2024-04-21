@@ -7,3 +7,8 @@
 .descriptionContainer {
   height: 100%;
 }
+.homeContainer {
+  height: 100%;
+  background-image: url('../public/assets/images/logo-white.svg');
+  background-repeat: round round;
+}
