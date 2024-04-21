@@ -1,9 +1,11 @@
-import React from 'react'
-import './CustomSelector.css'
+import React from 'react';
+import './CustomSelector.css';
 
-export default function CustomSelector({ type, content, action }) {
+export default function CustomSelector({ type, content, action, selected }) {
+  const isSelected = selected && selected.code === content.code;
+
   return (
-    <div className='customSelector'>
+    <div className={`customSelector ${isSelected ? 'active' : ''}`}>
       {
         type === 'SIZE' ? (
           <button className='size' onClick={() => action(content)}>{content.value}</button>
