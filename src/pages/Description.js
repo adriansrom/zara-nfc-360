@@ -8,7 +8,7 @@ export default function Description() {
 
   return (
     <div className='descriptionContainer'>
-      <HeaderTabs changeTab={setActiveTab}/>
+      <HeaderTabs activeTab={activeTab} changeTab={setActiveTab}/>
       {
         activeTab === 'ESCANEAR' && (
           <div>ESCANEAR</div>

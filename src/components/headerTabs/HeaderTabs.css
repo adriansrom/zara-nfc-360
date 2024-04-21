@@ -13,8 +13,14 @@
     display: flex;
     list-style-type: none;
     justify-content: space-between;
-    button {
-      color: lightgrey;
+    li {
+      &.active > button {
+        color: white;
+        font-weight: 600;
+      }
+      button {
+        color: lightgrey;
+      }
     }
   }
 }
