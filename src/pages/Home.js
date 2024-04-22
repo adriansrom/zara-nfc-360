@@ -14,7 +14,7 @@ export default function Home() {
         {
           showModal && (
             <Modal>
-              <ModalNfc onClose={() => setShowModal(false)}/>
+              <ModalNfc onClose={() => setShowModal(false)} />
             </Modal>
           )
         }
