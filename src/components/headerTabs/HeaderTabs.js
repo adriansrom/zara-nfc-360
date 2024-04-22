@@ -1,7 +1,7 @@
 import React from 'react'
 import './HeaderTabs.css'
 
-export default function HeaderTabs({ activeTab, changeTab }) {
+export default function HeaderTabs({ changeTab, showModal, setShowModal, activeTab }) {
 
   return (
     <div className='headerTabsContainer'>
@@ -9,8 +9,8 @@ export default function HeaderTabs({ activeTab, changeTab }) {
         <li className={activeTab === 'ESCANEAR' ? 'active' : ''}>
           <button onClick={() => setShowModal(!showModal)}>ESCANEAR</button>
         </li>
-        <li className={activeTab === 'DESCRIPCIÓN' ? 'active' : ''}>
-          <button onClick={() => changeTab('DESCRIPCIÓN')}>DESCRIPCIÓN</button>
+        <li className={activeTab === 'DESCRIPCION' ? 'active' : ''}>
+          <button onClick={() => changeTab('DESCRIPCION')}>DESCRIPCIÓN</button>
         </li>
         <li className={activeTab === 'CONSULTAR STOCK' ? 'active' : ''}>
           <button onClick={() => changeTab('CONSULTAR STOCK')}>CONSULTAR STOCK</button>
