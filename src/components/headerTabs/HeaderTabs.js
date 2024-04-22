@@ -1,15 +1,15 @@
 import React from 'react'
 import './HeaderTabs.css'
 
-export default function HeaderTabs({ changeTab }) {
+export default function HeaderTabs({ changeTab, showModal, setShowModal }) {
   return (
     <div className='headerTabsContainer'>
       <ul>
         <li>
-          <button onClick={() => changeTab('ESCANEAR')}>ESCANEAR</button>
+          <button onClick={() => setShowModal(!showModal)}>ESCANEAR</button>
         </li>
         <li>
-          <button onClick={() => changeTab('LEER DESCRIPCIÓN')}>LEER DESCRIPCIÓN</button>
+          <button onClick={() => changeTab('DESCRIPCION')}>DESCRIPCIÓN</button>
         </li>
         <li>
           <button onClick={() => changeTab('CONSULTAR STOCK')}>CONSULTAR STOCK</button>

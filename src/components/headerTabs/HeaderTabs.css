@@ -7,12 +7,13 @@
   border-bottom: 2px solid lightgrey;
   align-content: center;
   overflow-y: auto;
+  background-color: black;
   ul {
     padding: 0px;
     margin: 0px;
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
+    justify-content: space-around;
     button {
       color: lightgrey;
     }

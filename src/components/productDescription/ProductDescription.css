@@ -1,0 +1,8 @@
+.productDescriptionContainer {
+    padding-top: 2.6rem;
+    padding-bottom: 5rem;
+    background-color: black;
+    .productImage {
+        max-width: 100%;
+    }
+}
