@@ -23,7 +23,7 @@ export default function CheckStock() {
     if (!selectedSize || !selectedColor) return alert('Selecciona talla y color')
 
     const reference = getReferenceByColorAndSize(productInfo.detail, selectedColor.code, selectedSize.code)
-    const stock = await getPhysicalStock({ reference: reference })
+    const stock = await getPhysicalStock(reference)
 
     if ( stock > 0 ) {
       setModalInfo({

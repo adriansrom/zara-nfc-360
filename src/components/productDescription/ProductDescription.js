@@ -9,7 +9,7 @@ import './ProductDescription.css';
 export default function ProductDescription() {
     const { productInfo, setProductInfo } = useProductInfo();
     const [showDescription, setShowDescription] = useState(false)
-    const [productStock , setProductStock] = useState(0);
+    const [productStock , setProductStock] = useState(null);
     const { productId } = useParams();
 
     const toggleDescription = () => {
@@ -19,22 +19,22 @@ export default function ProductDescription() {
     useEffect(() => {
         if (productId) {
             getProductInfo(productId)
-                .then(data => {
+                .then(async data => {
                     setProductInfo(data)
                 })
                 .catch(error => {
                     console.error(error)
                 })
             getPhysicalStock(`${productId}-V2024`).then(data => {
-                setProductStock(data)
-            }).catch(error => {
-                console.error(error)
-            })
+                    setProductStock(data)
+                }).catch(error => {
+                    console.error(error)
+                })
         }
     }, [productId])
     return (
         <div className='productDescriptionContainer'>
-            {productInfo !== null &&
+            {productInfo !== null && productStock !== null &&
                 <>
                  {(!showDescription &&
                     <>
@@ -42,7 +42,7 @@ export default function ProductDescription() {
                             <h3>
                                 {productInfo.name} - {productInfo.price} EUR
                             </h3>
-                            <p>{productInfo.details.shortDescription} de la <b>TALLA {productInfo.size}</b> y <b>{productInfo.color}</b>.</p>
+                            <p>{productInfo.shortDescription} de la <b>TALLA {productInfo.detail.size}</b> y <b>COLOR {productInfo.detail.color.toUpperCase()}</b>.</p>
                             <p>Tu talla habitual para este tipo de prendas es la {productInfo.recommendedSize} y en esta tienda tienes {productStock} unidades.</p>
 
                         </section>
@@ -61,7 +61,7 @@ export default function ProductDescription() {
                         </div>
                         <img
                         className='productImage'
-                        src={productInfo.url}></img>
+                        src={productInfo.detail.url}></img>
                         <section>
                             <h3>
                                 {productInfo.name} - {productInfo.price} EUR
@@ -76,7 +76,7 @@ export default function ProductDescription() {
                             <h5>Exterior</h5>
                             <ul>
                                 {
-                                    productInfo.composition.map((item) => (
+                                    productInfo.detail.composition.map((item) => (
                                         <li key={item.percentage}>{item.percentage} - {item.material} </li>
                                     ))
                                 }

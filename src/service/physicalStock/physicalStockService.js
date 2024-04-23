@@ -1,4 +1,4 @@
-export default async function getPhysicalStock({ reference }) {
+export default async function getPhysicalStock(reference) {
   const physicalStock = [
     {
       reference: '0558426180002-V2024',
@@ -33,7 +33,7 @@ export default async function getPhysicalStock({ reference }) {
       stock: 18
     },
   ]
-
+console.log(reference)
   const availabilityStock = physicalStock.find(stock => stock.reference === reference)
 
   return availabilityStock?.stock ?? 0
