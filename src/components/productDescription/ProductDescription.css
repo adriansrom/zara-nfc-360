@@ -5,4 +5,17 @@
     .productImage {
         max-width: 100%;
     }
+    section {
+        padding-left: 1rem;
+    }
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+    }
+    .backBtn {
+        position: absolute;
+        background: black;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
 }

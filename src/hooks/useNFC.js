@@ -7,11 +7,6 @@ export default function useNFC(onScan) {
 
 
     const startScanning = async () => {
-        //TODO: DELETE
-        setTimeout(() => {
-            console.log("SCANNED!");
-            onScan({ productId: Math.floor(Math.random() * 10) });
-        }, 5000)
 
         try {
             const ndef = new window.NDEFReader();
@@ -19,9 +14,10 @@ export default function useNFC(onScan) {
             setNfcStatus("SCANNING");
 
 
-            ndef.onreading = ({ message, serialNumber }) => {
+            ndef.onreading = (data) => {
+                var payload = new TextDecoder().decode(data.message.records[0].data.buffer);
                 setNfcStatus("SUCCESS")
-                onScan({ serialNumber, message });
+                onScan(payload);
             };
 
             ndef.onreadingerror = () => {
