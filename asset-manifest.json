@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/zara-nfc-360/static/css/main.170c227d.css",
-    "main.js": "/zara-nfc-360/static/js/main.9120d39f.js",
+    "main.js": "/zara-nfc-360/static/js/main.a170099f.js",
     "static/js/453.c7dc27a7.chunk.js": "/zara-nfc-360/static/js/453.c7dc27a7.chunk.js",
     "static/media/logo-white.svg": "/zara-nfc-360/static/media/logo-white.66be945af05ffdf8652e.svg",
     "index.html": "/zara-nfc-360/index.html",
     "main.170c227d.css.map": "/zara-nfc-360/static/css/main.170c227d.css.map",
-    "main.9120d39f.js.map": "/zara-nfc-360/static/js/main.9120d39f.js.map",
+    "main.a170099f.js.map": "/zara-nfc-360/static/js/main.a170099f.js.map",
     "453.c7dc27a7.chunk.js.map": "/zara-nfc-360/static/js/453.c7dc27a7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.170c227d.css",
-    "static/js/main.9120d39f.js"
+    "static/js/main.a170099f.js"
   ]
 }
