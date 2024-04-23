@@ -1,14 +1,40 @@
-export default async function getPhysicalStock({ storeId, reference, sectionName }) {
-  try {
-    const res = await fetch(`https://www.zara.com/es/es/store-stock?physicalStoreIds=${storeId}&references=${reference}&sectionName=${sectionName}`,
+export default async function getPhysicalStock({ reference }) {
+  const physicalStock = [
     {
-      method: 'GET',
-      headers: new Headers({
-          'Content-Type': 'application/json'
-      }),
-    })
-    return res.json();
-  } catch (error) {
-    console.error(error);
-  }
+      reference: '0558426180002-V2024',
+      stock: 10
+    },
+    {
+      reference: '0558436180003-V2024',
+      stock: 5
+    },
+    {
+      reference: '0558436180004-V2024',
+      stock: 1
+    },
+    {
+      reference: '0558436180005-V2024',
+      stock: 4
+    },
+    {
+      reference: '0558436140102-V2024',
+      stock: 14
+    },
+    {
+      reference: '0558426140103-V2024',
+      stock: 3
+    },
+    {
+      reference: '0558436152703-V2024',
+      stock: 7
+    },
+    {
+      reference: '0558436152704-V2024',
+      stock: 18
+    },
+  ]
+
+  const availabilityStock = physicalStock.find(stock => stock.reference === reference)
+
+  return availabilityStock?.stock ?? 0
 }

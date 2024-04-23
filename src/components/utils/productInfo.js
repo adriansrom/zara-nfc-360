@@ -8,8 +8,12 @@ export const getAvailableColors = (colors) => {
   })
 }
 
-export const getAvailableSizes = (color) => {
-  return color.sizes.map((size) => {
+export const getAvailableSizes = (detail, selectedColor) => {
+  if (!selectedColor) return [];
+
+  const selectedColorDetails = detail.colors.find(color => color.id === selectedColor.code)
+
+  return selectedColorDetails.sizes.map((size) => {
     return {
       code: size.id,
       value: size.name

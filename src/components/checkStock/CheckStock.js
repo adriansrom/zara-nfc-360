@@ -23,11 +23,11 @@ export default function CheckStock() {
     if (!selectedSize || !selectedColor) return alert('Selecciona talla y color')
 
     const reference = getReferenceByColorAndSize(productInfo.detail, selectedColor.code, selectedSize.code)
-    const res = await getPhysicalStock({ storeId: 691, reference: reference, sectionName: productInfo.sectionName })
+    const stock = await getPhysicalStock({ reference: reference })
 
-    if ( res.productAvailability.length > 0 ) {
+    if ( stock > 0 ) {
       setModalInfo({
-        textBody: `Actualmente tenemos ${res.productAvailability[0].availableProducts[0].stock} prendas de color ${selectedColor.name} talla ${selectedSize.value} en tienda.`,
+        textBody: `Actualmente tenemos ${stock} prendas de color ${selectedColor.name} talla ${selectedSize.value} en tienda.`,
         actions:  [
           {
             text: 'GUIAME',
@@ -92,8 +92,8 @@ export default function CheckStock() {
         {
           actualView === "STOCK" ? (
             <>
-              <SizeSelector availableSizes={getAvailableSizes(productInfo.detail.colors[0])} onChangeSelection={setSelectedSize} selectedSize={selectedSize}/>
               <ColorSelector availableColors={getAvailableColors(productInfo.detail.colors)} onChangeSelection={setSelectedColor} selectedColor={selectedColor}/>
+              <SizeSelector availableSizes={getAvailableSizes(productInfo.detail, selectedColor)} onChangeSelection={setSelectedSize} selectedSize={selectedSize}/>
               <div className='checkStockButtonContainer'>
                 <PrimaryButton text='CONSULTAR' size='small' onClick={checkStock} mode='dark' />
               </div>
