@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function ModalNfc({ onClose }) {
   const [nfcStatus, startScanning, stopScanning] = useNFC(
     (data) => {
-      navigate("/description/" + data.productId);
+      navigate("/description/" + data);
       stopScanning();
       onClose();
     }
