@@ -97,6 +97,10 @@ export default async function getPhysicalStock(reference) {
       stock: 8
     },
     {
+      reference: '0104415780002-V2024',
+      stock: 3
+    },
+    {
       reference: '0104415771102-V2024',
       stock: 3
     },

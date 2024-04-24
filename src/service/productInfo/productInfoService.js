@@ -402,7 +402,7 @@ export default async function getProductInfo(mocacota) {
                 "price": "19,95",
                 "shortDescription": "Vestido midi",
                 "description": "Vestido midi confeccionado en hilatura con mezcla de algodón. Cuello redondo y manga sisa caída.",
-                "recommendedSize": "S",
+                "recommendedSize": "M",
                 "detail": {
                     "reference": "01044157-V2024",
                     "displayReference": "1044/157",
