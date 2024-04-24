@@ -1,12 +1,22 @@
-import React from 'react'
-import './FooterTabs.css'
+import React from 'react';
+import { useNavigate } from "react-router-dom";
+import { useShopCart } from '../../store/cart/shopCart';
+import './FooterTabs.css';
 
 export default function FooterTabs() {
+  const shopCart = useShopCart((store) => store.shopCart);
+
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/");
+  }
+
   return (
     <div className='footerTabsContainer'>
       <ul>
         <li>
-          <button className='selected'>INICIO</button>
+          <button className='selected' onClick={handleClick}>INICIO</button>
         </li>
         <li>
           <button>MENU</button>
@@ -15,7 +25,7 @@ export default function FooterTabs() {
           <button>CUENTA</button>
         </li>
         <li>
-          <button>CESTA (0)</button>
+          <button>CESTA ({shopCart.length})</button>
         </li>
       </ul>
     </div>

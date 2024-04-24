@@ -1,16 +1,14 @@
 import React from 'react';
 import Modal from '../components/modal/Modal';
 import ModalNfc from '../components/modal/modalNfc/ModalNfc';
+import StoreMode from '../components/storeMode/StoreMode';
 
 export default function Home() {
   const [showModal, setShowModal] = React.useState(false);
 
   return (
     <div className='homeContainer'>
-      <>
-        <button className='dark' onClick={() => setShowModal(true)}>
-          NFC
-        </button>
+        <StoreMode actionButton={() => setShowModal(true)} />
         {
           showModal && (
             <Modal>
@@ -18,7 +16,6 @@ export default function Home() {
             </Modal>
           )
         }
-      </>
     </div>
   )
 }
