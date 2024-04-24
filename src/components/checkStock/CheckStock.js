@@ -1,5 +1,7 @@
 import React, { useCallback, useState } from 'react'
+import { toast } from 'sonner'
 import getPhysicalStock from '../../service/physicalStock/physicalStockService'
+import { useShopCart } from '../../store/cart/shopCart'
 import { useProductInfo } from '../../store/product/productInfo'
 import Modal from '../modal/Modal'
 import ModalMultiOption from '../modal/modalMultiOption/ModalMultiOption'
@@ -18,6 +20,7 @@ export default function CheckStock() {
   const [showModal, setShowModal] = useState(false);
   const [actualView, setActualView] = useState("STOCK");
   const productInfo =  useProductInfo((store) => store.productInfo);
+  const {shopCart, setShopCart} = useShopCart();
 
   const checkStock = useCallback(async () => {
     if (!selectedSize || !selectedColor) return alert('Selecciona talla y color')
@@ -53,15 +56,21 @@ export default function CheckStock() {
         textBody: 'Actualmente no tenemos stock en tienda, pero si esta disponible online.',
         actions:  [
           {
-            text: 'PAGINA DE PRODUCTO',
+            text: 'AÑADIR A LA CESTA',
             onClick: () => {
-              alert("Se le redirigira a la pagina de producto.");
               setShowModal(false);
+              debugger
+              if (shopCart.includes(reference)) {
+                toast.warning("Este producto ya esta en su cesta.");
+                return;
+              }
+              toast.success("Producto añadido a su cesta.");
+              setShopCart(reference);
             }
           },
           {
             text: 'AYUDA',
-            onClick: () => alert("Alguien de personal de tienda acudira a ayudarle en breve.")
+            onClick: () => toast.info("Alguien de personal de tienda acudira a ayudarle en breve.")
           }
         ]
       })
@@ -75,7 +84,7 @@ export default function CheckStock() {
         {
           text: 'COMING SOON',
           onClick: () => {
-            alert("Se ha registrado tu solicitud, te avisaremos cuando este disponible.");
+            toast.success("Se ha registrado tu solicitud, te avisaremos cuando este disponible.");
             setShowModal(false);
           }
         },
