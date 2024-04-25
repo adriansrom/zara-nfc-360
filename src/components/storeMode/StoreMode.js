@@ -15,7 +15,7 @@ export default function StoreMode({actionButton}) {
           </svg>
 
         </button>
-        <span id='nfcButton'>ASISTENTE NFC</span>
+        <span aria-hidden="true" id='nfcButton'>ASISTENTE NFC</span>
       </div>
     </div>
   )

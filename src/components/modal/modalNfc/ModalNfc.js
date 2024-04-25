@@ -26,9 +26,11 @@ export default function ModalNfc({ onClose }) {
 
   return (
     <div className='modalNfcContainer'>
-      <h3>LISTO PARA ESCANEAR</h3>
-      <img className={"icon" + (nfcStatus === "ERROR" ? " error" : "")} src={nfcImage} alt="animacion gif nfc" />
-      <button onClick={onCancel}>CANCELAR</button>
+      <p>LISTO PARA ESCANEAR</p>
+      <img aria-hidden="true" className={"icon" + (nfcStatus === "ERROR" ? " error" : "")} src={nfcImage} alt="animacion gif nfc" />
+      <form method="dialog" aria-label="Cancelar boton">
+        <button aria-label="Cancelar" onClick={onCancel}>CANCELAR</button>
+      </form>
     </div>
   )
 }

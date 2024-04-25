@@ -6,12 +6,14 @@ export default function SizeSelector({availableSizes, onChangeSelection, selecte
 
   return (
     <div className='sizeSelectorContainer'>
-      <h1>TALLA</h1>
-      <div className='sizeSelectors'>
+      <p aria-label='Selector de talla'>TALLA</p>
+      <ul className='sizeSelectors'>
         {availableSizes.map(size => (
-          <CustomSelector key={size.code} type='SIZE' content={size} action={onChangeSelection} selected={selectedSize}/>
+          <li>
+            <CustomSelector key={size.code} type='SIZE' content={size} action={onChangeSelection} selected={selectedSize}/>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

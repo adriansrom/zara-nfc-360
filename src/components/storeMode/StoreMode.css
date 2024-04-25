@@ -9,7 +9,7 @@
   height: 15rem;
   width: 100%;
   padding-bottom: 3.4rem;
-  background: #313030;
+  background: rgba(48,48,48,.5);
   .nfc {
     display: flex;
     flex-direction: column;

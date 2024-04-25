@@ -33,7 +33,7 @@ export default function CheckStock() {
         textBody: `Actualmente tenemos ${stock} prendas de color ${selectedColor.name} talla ${selectedSize.value} en tienda.`,
         actions:  [
           {
-            text: 'GUIAME',
+            text: 'GUÍAME',
             onClick: () => {
               setShowModal(false);
               setActualView("GUIDE");
@@ -104,7 +104,7 @@ export default function CheckStock() {
               <ColorSelector availableColors={getAvailableColors(productInfo.detail.colors)} onChangeSelection={setSelectedColor} selectedColor={selectedColor}/>
               <SizeSelector availableSizes={getAvailableSizes(productInfo.detail, selectedColor)} onChangeSelection={setSelectedSize} selectedSize={selectedSize}/>
               <div className='checkStockButtonContainer'>
-                <PrimaryButton text='CONSULTAR' size='small' onClick={checkStock} mode='dark' />
+                <PrimaryButton ariaLabel={`Consultar stock color ${selectedColor?.name} y talla ${selectedSize?.value.toLowerCase()}  `} text='CONSULTAR' size='small' onClick={checkStock} mode='dark' />
               </div>
             </>
           ) : (

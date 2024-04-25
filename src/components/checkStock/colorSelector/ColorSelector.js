@@ -6,12 +6,14 @@ export default function ColorSelector({availableColors, onChangeSelection, selec
 
   return (
     <div className='colorSelectorContainer'>
-      <h1>COLOR</h1>
-      <div className='colorSelectors'>
+      <p aria-label='Selector de color'>COLOR</p>
+      <ul className='colorSelectors'>
         {availableColors.map(color => (
-          <CustomSelector key={color.code} type='COLOR' content={color} action={onChangeSelection} selected={selectedColor}/>
+          <li>
+            <CustomSelector key={color.code} type='COLOR' content={color} action={onChangeSelection} selected={selectedColor}/>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

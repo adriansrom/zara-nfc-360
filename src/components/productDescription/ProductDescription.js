@@ -39,29 +39,31 @@ export default function ProductDescription() {
                  {(!showDescription &&
                     <>
                         <section>
-                            <h3>
+                            <h3 autoFocus>
                                 {productInfo.name} - {productInfo.price} EUR
                             </h3>
                             <p>{productInfo.shortDescription} de la <b>TALLA {productInfo.detail.size}</b> y <b>COLOR {productInfo.detail.color.toUpperCase()}</b>.</p>
                             <p>Tu talla habitual para este tipo de prendas es la {productInfo.recommendedSize} y en esta tienda tienes {productStock} unidades.</p>
-
-                        </section>
                         <div className='buttonContainer'>
                             <PrimaryButton text='MAS INFORMACION' size='large' mode='dark' onClick={toggleDescription}></PrimaryButton>
                         </div>
+
+                        </section>
                     </>
                  )}
 
                 {(showDescription &&
                     <>
                         <div className='backBtn'>
-                            <button className='dark' onClick={toggleDescription}>
+                            <button className='dark' aria-label='Atras' onClick={toggleDescription}>
                             <svg width="30" height="24" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.295 19.716a1 1 0 0 0 1.404-1.425l-5.37-5.29h13.67a1 1 0 1 0 0-2H6.336L11.7 5.714a1 1 0 0 0-1.404-1.424l-6.924 6.822a1.25 1.25 0 0 0 0 1.78l6.924 6.823Z" fill="#ffffff"/></svg>
                             </button>
                         </div>
                         <img
                         className='productImage'
-                        src={productInfo.detail.url}></img>
+                        src={productInfo.detail.url}
+                        alt={productInfo.description}
+                        ></img>
                         <section>
                             <h3>
                                 {productInfo.name} - {productInfo.price} EUR

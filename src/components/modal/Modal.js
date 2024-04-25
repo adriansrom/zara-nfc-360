@@ -3,8 +3,10 @@ import './Modal.css'
 
 export default function Modal({ children }) {
   return (
-    <div className='modalContainer'>
-      {children}
-    </div>
+    <>
+      <dialog open autoFocus className='modalContainer'>
+        {children}
+      </dialog>  
+    </>
   )
 }

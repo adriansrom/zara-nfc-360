@@ -12,15 +12,17 @@ export default function Description() {
 
   return (
     <div className='descriptionContainer'>
-      <HeaderTabs changeTab={setActiveTab} showModal={showModal} setShowModal={setShowModal} activeTab={activeTab} />
+      <div aria-hidden={showModal}>
+        <HeaderTabs changeTab={setActiveTab} showModal={showModal} setShowModal={setShowModal} activeTab={activeTab} />
+      </div>
       {
         showModal && (
-          <Modal>
-            <ModalNfc onClose={() => {
-              setShowModal(false)
-              setActiveTab('DESCRIPCION')
-            }} />
-          </Modal>
+            <Modal>
+              <ModalNfc onClose={() => {
+                setShowModal(false)
+                setActiveTab('DESCRIPCION')
+              }} />
+            </Modal>
         )
       }
       {
