@@ -1,9 +1,9 @@
 import React from 'react'
 import CheckStock from '../components/checkStock/CheckStock'
 import HeaderTabs from '../components/headerTabs/HeaderTabs'
-import ProductDescription from '../components/productDescription/ProductDescription'
-import ModalNfc from '../components/modal/modalNfc/ModalNfc'
 import Modal from '../components/modal/Modal'
+import ModalNfc from '../components/modal/modalNfc/ModalNfc'
+import ProductDescription from '../components/productDescription/ProductDescription'
 
 export default function Description() {
 
@@ -16,7 +16,10 @@ export default function Description() {
       {
         showModal && (
           <Modal>
-            <ModalNfc onClose={() => setShowModal(false)} />
+            <ModalNfc onClose={() => {
+              setShowModal(false)
+              setActiveTab('DESCRIPCION')
+            }} />
           </Modal>
         )
       }

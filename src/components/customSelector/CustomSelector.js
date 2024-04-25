@@ -8,9 +8,9 @@ export default function CustomSelector({ type, content, action, selected }) {
     <div className={`customSelector ${isSelected ? 'active' : ''}`}>
       {
         type === 'SIZE' ? (
-          <button className='size' onClick={() => action(content)}>{content.value}</button>
+          <button aria-label={content.value} className='size' onClick={() => action(content)}>{content.value}</button>
         ) : (
-          <button onClick={() => action(content)} style={{backgroundColor: content.value}} ></button>
+          <button aria-label={content.name} onClick={() => action(content)} style={{backgroundColor: content.value}} ></button>
         )
       }
     </ div>
